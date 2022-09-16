@@ -17,7 +17,6 @@ namespace StarterAssets
 
         private void Start()
         {
-            sound.playOnAwake = false;
             player = GetComponent<FirstPersonController>();
             inside = false;
         }
@@ -38,7 +37,7 @@ namespace StarterAssets
             if (col.gameObject.tag == "Ladder")
             {
                 Debug.Log("TouchingLadderTrue");
-                player.enabled = false;
+                player.enabled = true;
                 inside = !inside;
             }
         }
