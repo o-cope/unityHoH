@@ -16,6 +16,7 @@ public class AdvancedDoors : MonoBehaviour
     [SerializeField] private GameObject openText;
     [SerializeField] private GameObject closeText;
     [SerializeField] private GameObject lockedText;
+    [SerializeField] private Collider doorCollider;
 
     [Header("Audio")]
     [SerializeField] private AudioSource openSound;
@@ -26,6 +27,7 @@ public class AdvancedDoors : MonoBehaviour
     private bool inReach;
     private bool doorisOpen;
     private bool doorisClosed;
+    private bool isAnimating;
 
     private void OnTriggerEnter(Collider reachTool)
     {
@@ -57,6 +59,7 @@ public class AdvancedDoors : MonoBehaviour
         inReach = false;
         doorisClosed = true;
         doorisOpen = false;
+        isAnimating = false;
         closeText.SetActive(false);
         openText.SetActive(false);
 
@@ -92,6 +95,7 @@ public class AdvancedDoors : MonoBehaviour
             openSound.Play();
             doorisOpen = true;
             doorisClosed = false;
+            
         }
 
         else if (inReach && doorisOpen && unlocked && Input.GetButtonDown("Interact"))
@@ -110,6 +114,12 @@ public class AdvancedDoors : MonoBehaviour
             openText.SetActive(false);
             lockedText.SetActive(true);
             lockedSound.Play();
+        }
+
+
+        if (isAnimating)
+        {
+            doorCollider.enabled = false;
         }
 
 
