@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class AdvancedDoors : MonoBehaviour
 {
     [Header("Lock settings")]
@@ -60,6 +59,8 @@ public class AdvancedDoors : MonoBehaviour
         doorisOpen = false;
         closeText.SetActive(false);
         openText.SetActive(false);
+
+        door = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -110,6 +111,7 @@ public class AdvancedDoors : MonoBehaviour
             lockedText.SetActive(true);
             lockedSound.Play();
         }
+
 
     }
 
