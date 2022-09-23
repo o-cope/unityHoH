@@ -1,8 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class AdvancedDoors : MonoBehaviour
+
+public class RaycastDoor : MonoBehaviour
 {
+
+
+    [Header("Raycast Distance")]
+    [SerializeField] private int raycastDist;
+
     [Header("Lock settings")]
     [SerializeField] private bool locked;
     [SerializeField] private bool unlocked;
@@ -16,7 +22,6 @@ public class AdvancedDoors : MonoBehaviour
     [SerializeField] private GameObject openText;
     [SerializeField] private GameObject closeText;
     [SerializeField] private GameObject lockedText;
-    [SerializeField] private BoxCollider doorCollider;
 
     [Header("Audio")]
     [SerializeField] private AudioSource openSound;
@@ -29,30 +34,10 @@ public class AdvancedDoors : MonoBehaviour
     private bool doorisClosed;
     private bool isAnimating = false;
 
-    private void OnTriggerEnter(Collider reachTool)
-    {
-        if (reachTool.gameObject.tag == "Reach" && doorisClosed)
-        {
-            inReach = true;
-            openText.SetActive(true);
-        }
-        if (reachTool.gameObject.tag == "Reach" && doorisOpen)
-        {
-            inReach = true;
-            closeText.SetActive(true);
-        }
-    }
 
-    private void OnTriggerExit(Collider reachTool)
-    {
-        if (reachTool.gameObject.tag == "Reach")
-        {
-            inReach = false;
-            openText.SetActive(false);
-            closeText.SetActive(false);
-            lockedText.SetActive(false);
-        }
-    }
+
+    [SerializeField] private Vector3 collision = Vector3.zero;
+
 
     private void Start()
     {
@@ -62,12 +47,43 @@ public class AdvancedDoors : MonoBehaviour
         closeText.SetActive(false);
         openText.SetActive(false);
 
-        doorCollider = GetComponent<BoxCollider>();
     }
 
     private void Update()
     {
-        if (lockOB.activeInHierarchy)
+        var ray = new Ray(this.transform.position, this.transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, raycastDist))
+        {
+            collision = hit.point;
+
+            if (hit.transform.gameObject.CompareTag("DoorHinge"))
+            {
+                Debug.Log("Door Hinge");
+            }
+
+            if (hit.transform.gameObject.CompareTag("DoorHinge") && doorisClosed)
+            {
+                inReach = true;
+                openText.SetActive(true);
+            }
+            else if (hit.transform.gameObject.CompareTag("DoorHinge") && doorisOpen)
+            {
+                inReach = true;
+                closeText.SetActive(true);
+            }
+            else if (!hit.transform.gameObject.CompareTag("DoorHinge"))
+            {
+                inReach = false;
+                openText.SetActive(false);
+                closeText.SetActive(false);
+                lockedText.SetActive(false);
+            }
+        }
+
+
+
+            if (lockOB.activeInHierarchy)
         {
             locked = true;
             unlocked = false;
@@ -75,7 +91,7 @@ public class AdvancedDoors : MonoBehaviour
         else
         {
             locked = false;
-            unlocked = true;   
+            unlocked = true;
         }
 
         if (inReach && keyOB.activeInHierarchy && Input.GetButtonDown("Interact"))
@@ -94,7 +110,7 @@ public class AdvancedDoors : MonoBehaviour
             openSound.Play();
             doorisOpen = true;
             doorisClosed = false;
-            
+
         }
 
         else if (inReach && doorisOpen && unlocked && Input.GetButtonDown("Interact") && isAnimating == false)
@@ -138,4 +154,15 @@ public class AdvancedDoors : MonoBehaviour
     {
         isAnimating = false;
     }
+
+
+    private void OnDrawGizmos()
+    {
+        Update();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(collision, 0.2f);
+    }
+
+
 }
+
