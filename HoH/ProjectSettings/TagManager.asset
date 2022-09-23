@@ -7,9 +7,10 @@ TagManager:
   - CinemachineTarget
   - Ladder
   - Reach
-  - Cube
-  - DoorHinge
-  - interactiveObject
+  - interactiveDoor
+  - interactiveBox
+  - interactiveBoxKey
+  - interactiveDoorKey
   layers:
   - Default
   - TransparentFX
