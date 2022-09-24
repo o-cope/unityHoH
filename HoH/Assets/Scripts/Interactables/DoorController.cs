@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorController : Interactable
 {
 
+    #region Parametres 
     [Header("gameObjects")]
     [SerializeField] private GameObject lockOb = null;
     [SerializeField] private GameObject keyOb = null;
@@ -23,29 +24,25 @@ public class DoorController : Interactable
     private Animator doorAnim;
     private bool isAnimating = false;
     private bool doorOpen = false;
-    
-    
+    #endregion
     private void Awake()
     {
         doorAnim = gameObject.GetComponent<Animator>();
     }
 
-
     private void Update()
     {
-        if (lockOb.activeInHierarchy)
-        {
-            locked = true;
-            unlocked = false;
-        }
-        else
-        {
-            locked = false;
-            unlocked = true;
-        }
+        CheckLock();
     }
 
     protected override void Interact()
+    {
+        Door();   
+    }
+
+    #region Functions
+
+    private void Door()
     {
         if (keyOb.activeInHierarchy)
         {
@@ -66,11 +63,23 @@ public class DoorController : Interactable
             closeSound.Play();
             doorOpen = false;
         }
-
         if (locked)
         {
-            Debug.Log("locked");
             lockedSound.Play();
+        }
+    }
+
+    private void CheckLock()
+    {
+        if (lockOb.activeInHierarchy)
+        {
+            locked = true;
+            unlocked = false;
+        }
+        else
+        {
+            locked = false;
+            unlocked = true;
         }
     }
 
@@ -93,5 +102,7 @@ public class DoorController : Interactable
     {
         isAnimating = false;
     }
+
+    #endregion
 
 }
