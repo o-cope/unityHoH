@@ -17,13 +17,12 @@ public class PlayerInteract : MonoBehaviour
 
     private Interactable currentInteractable;
     private Camera cam;
-    private bool onFocus = false;
+
 
     #endregion
     void Start()
     {
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
     }
     void Update()
     {
@@ -41,8 +40,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
         {
-
-            if (hitInfo.collider.gameObject.layer == 10 && (currentInteractable == null || hitInfo.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+            if (hitInfo.collider.gameObject.layer == 10 && (!currentInteractable || hitInfo.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
             {
                 hitInfo.collider.TryGetComponent(out currentInteractable);
 
