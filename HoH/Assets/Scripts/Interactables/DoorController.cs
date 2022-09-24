@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController : Interactable
 {
 
     [Header("gameObjects")]
@@ -45,7 +45,7 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    public void PlayDoorAnimation()
+    protected override void Interact()
     {
         if (keyOb.activeInHierarchy)
         {
@@ -80,10 +80,10 @@ public class DoorController : MonoBehaviour
         {
             unlocked = true;
             lockOb.SetActive(false);
-        }   
-            
+        }
+
     }
- 
+
 
     private void DisableInteract()
     {

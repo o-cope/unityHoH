@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxController : MonoBehaviour
+public class BoxController : Interactable
 {
     [Header("gameObjects")]
     [SerializeField] private GameObject keyRequired;
@@ -19,11 +19,12 @@ public class BoxController : MonoBehaviour
         boxAnim = gameObject.GetComponent<Animator>();
     }
 
-    public void PlayBoxAnimation()
+    protected override void Interact()
     {
         if (keyRequired.activeInHierarchy && !open)
         {
             boxAnim.Play("boxOpen", 0, 0.0f);
+            keyRequired.SetActive(false);
             openSound.Play();
             open = true;
         }
@@ -32,5 +33,4 @@ public class BoxController : MonoBehaviour
             lockedSound.Play();
         }
     }
-
 }

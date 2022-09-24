@@ -11,6 +11,7 @@ TagManager:
   - interactiveBox
   - interactiveBoxKey
   - interactiveDoorKey
+  - PlayerFollowCam
   layers:
   - Default
   - TransparentFX
