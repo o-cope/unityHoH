@@ -1146,7 +1146,6 @@ MonoBehaviour:
   turnOn: {fileID: 933925783}
   turnOff: {fileID: 1956794161}
   flashlightOn: 0
-  flashlightOff: 1
 --- !u!82 &739549928
 AudioSource:
   m_ObjectHideFlags: 0
