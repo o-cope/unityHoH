@@ -7,7 +7,7 @@ public class KeypadController : MonoBehaviour
 {
     #region Parametres
     [Header("Password Parametres")]
-    [SerializeField] private string password;
+    [SerializeField] public string password;
     [SerializeField] private int passwordLength;
     [SerializeField] private Text passwordText; //These establish the parametres regarding the password such as how long it can be and the type they are, i.e., "Text"
     [Header("Audio")]
@@ -18,6 +18,12 @@ public class KeypadController : MonoBehaviour
     [SerializeField] private GameObject box;
 
     #endregion
+
+    private void Awake()
+    {
+        int passwordRng = Random.Range(0, 9999);
+        password = passwordRng.ToString(); //Randomises password
+    }
 
     private void Start()
     {
