@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6498531270281653825}
   - component: {fileID: 6498531270280326767}
   - component: {fileID: 6498531270279228463}
+  - component: {fileID: -2577771495680129560}
   m_Layer: 0
   m_Name: Plaque
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-2577771495680129560
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6498531270281163361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300100, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}

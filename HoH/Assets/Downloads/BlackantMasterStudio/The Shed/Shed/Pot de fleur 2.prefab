@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7542589915180015793}
   - component: {fileID: 7542589915176624291}
   - component: {fileID: 7542589915177591523}
+  - component: {fileID: -381778085569129709}
   m_Layer: 0
   m_Name: Pot de fleur 2
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-381778085569129709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7542589915179531601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300034, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3642127798030065290}
   - component: {fileID: 3642127798029262488}
   - component: {fileID: 3642127798028295384}
+  - component: {fileID: -24284892360140550}
   m_Layer: 0
   m_Name: Manivelle
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-24284892360140550
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642127798030549674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300128, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}

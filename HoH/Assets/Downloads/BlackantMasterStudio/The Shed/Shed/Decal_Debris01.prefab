@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7637067896009321690}
   - component: {fileID: 7637067896007994540}
   - component: {fileID: 7637067896007028460}
+  - component: {fileID: 1435480110646234513}
   m_Layer: 0
   m_Name: Decal_Debris01
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1435480110646234513
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637067896009224378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300108, guid: 8d44a8bf542ec854ab6a6c818ea10b8a, type: 3}
