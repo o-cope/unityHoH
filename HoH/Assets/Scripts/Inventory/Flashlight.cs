@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-
+    #region Parametres
 
     [Header("Flashlight")]
     [SerializeField] private GameObject flashlight;
@@ -14,8 +14,11 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private AudioSource turnOn;
     [SerializeField] private AudioSource turnOff;
 
-    [Header("On")]
+    [Header("Bools")]
     [SerializeField] private bool flashlightOn;
+    [SerializeField] private bool canUseFlashlight;    
+
+    #endregion
 
 
     private void Start()
@@ -25,6 +28,17 @@ public class Flashlight : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (canUseFlashlight)
+        {
+            FlashlightUse();
+        }
+    }
+
+
+    #region Functions
+
+    private void FlashlightUse()
     {
         if (!flashlightOn && Input.GetButtonDown("F"))
         {
@@ -41,6 +55,7 @@ public class Flashlight : MonoBehaviour
     }
 
 
+    #endregion
 
 
 
