@@ -16,7 +16,7 @@ public class Flashlight : MonoBehaviour
 
     [Header("Bools")]
     [SerializeField] private bool flashlightOn;
-    [SerializeField] private bool canUseFlashlight;    
+    [SerializeField] public bool canUseFlashlight;    
 
     #endregion
 
