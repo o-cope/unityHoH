@@ -29047,7 +29047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 0
-  sceneName: MainMenu
+  sceneName: Level2House
 --- !u!1001 &1933861173
 PrefabInstance:
   m_ObjectHideFlags: 0
