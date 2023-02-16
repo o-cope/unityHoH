@@ -7,5 +7,5 @@ public class DestroyThis : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-    }
+    } //Destroys the game object it is attached to
 }

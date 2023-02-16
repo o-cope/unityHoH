@@ -9,5 +9,5 @@ public abstract class Interactable : MonoBehaviour
     {
         Interact();
     }
-    protected abstract void Interact();
+    protected abstract void Interact(); //abstract class that works by ensuring that all child classes inherit the interact fucntion to interact
 }

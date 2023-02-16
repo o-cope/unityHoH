@@ -15,6 +15,6 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
+    } //Attached to the main menu, loads the first level
 
 }
