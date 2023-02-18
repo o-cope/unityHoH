@@ -17,7 +17,7 @@ public class GrateDoorOpening : Interactable
 
     [Header("Lock settings")]
     [SerializeField] private bool locked;
-    [SerializeField] private bool unlocked;
+    [SerializeField] private bool unlocked; // THIS IS THE SAME AS DOOR CONTROLLER, WITH DIFFERENT NAMES FOR THE ANIMATIONS
 
 
     private Animator grateAnim;

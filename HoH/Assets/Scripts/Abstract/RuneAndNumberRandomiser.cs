@@ -9,10 +9,10 @@ public class RuneAndNumberRandomiser : MonoBehaviour
     #region Parametres
     [Header("Arrays")]
     [SerializeField] private int[] numbers = new int[4];
-    [SerializeField] private Sprite[] sprites = new Sprite[8]; //Creates two unpopulated arrays (sprites populated in unity) and stores them in numbers and sprites
+    [SerializeField] private Sprite[] runes = new Sprite[8]; //Creates two unpopulated arrays (sprites populated in unity) and stores them in numbers and sprites
 
     [Header("Rune Code Order")]
-    [SerializeField] private Image[] runeImagesOrder = new Image[4]; //Does the same as above, populated in Unity
+    [SerializeField] private Image[] runeImagesOrder = new Image[4]; //Does the same as above, populated in Unity. Refers to the 4 images that will be ordered as the code is ordered
 
     [Header("Canvas Locations")]
     [SerializeField] private Canvas[] runeSpawnLocation = new Canvas[4]; //Similar to above
@@ -49,35 +49,35 @@ public class RuneAndNumberRandomiser : MonoBehaviour
 
     private void CodeRuneOrder()
     {
-        for (int i = 0; i < runeImagesOrder.Length; i++)
+        for (int i = 0; i < runeImagesOrder.Length; i++) //for loop to ensure that all of the runeImagesOrder are changed
         {
-            runeImagesOrder[i].sprite = sprites[i];
+            runeImagesOrder[i].sprite = runes[i]; //changes the runeImagesOrder sprite to the correspending rune sprite, ensuring it is ordered
         }
     }
 
     private void RandomiseCanvasContents()
     {
-        for (int i = 0; i < runeSpawnLocation.Length; i++)
+        for (int i = 0; i < runeSpawnLocation.Length; i++) //for loop that runs through all the canvas spawn location
         {
             shuffledCanvas[i].GetComponentInChildren<Image>().sprite = shuffledSprites[i];
-            shuffledCanvas[i].GetComponentInChildren<TMP_Text>().text = numbers[i].ToString();
+            shuffledCanvas[i].GetComponentInChildren<TMP_Text>().text = numbers[i].ToString(); //ensures that the correct rune and number are put together to allow the player to solve the puzzle
         }
     }
 
-    private void RandomiseKeypadCode()
+    private void RandomiseKeypadCode() 
     {
         for (int i = 0; i < numbers.Length; i++)
         {
-            numbers[i] = Random.Range(0, 10);
+            numbers[i] = Random.Range(0, 10); //Generates numbers according to how large numbers[] is and populates it from 0-9
         }
 
-        passcode = string.Join("", numbers);
+        passcode = string.Join("", numbers); //puts those numbers into a single string to allow it to be used as a passcode
     }
 
     private void ShuffleAllArrays()
     {
-        shuffledSprites = ShuffleArray(sprites);
-        shuffledCanvas = ShuffleArray(runeSpawnLocation);
+        shuffledSprites = ShuffleArray(runes);
+        shuffledCanvas = ShuffleArray(runeSpawnLocation); //Shuffles both arrays
     }
 
     #endregion

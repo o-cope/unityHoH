@@ -9,23 +9,23 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] private Light lightOb;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource lightFlickerSound;
+    [SerializeField] private AudioSource lightFlickerSound; 
 
     [Header("Flicker Time")]
     [SerializeField] private float minTime;
-    [SerializeField] private float maxTime;
+    [SerializeField] private float maxTime; //assigned in the inspector. min time and max time refer too how long the light can be enabled for
 
-    private float timer;
+    private float timer; //internal timer to keep track
     #endregion
 
     private void Start()
     {
-        timer = Random.Range(minTime, maxTime);
+        timer = Random.Range(minTime, maxTime); //finds random value and assigns to timer
     }
 
     private void Update()
     {
-        LightsFlickering();
+        LightsFlickering(); //calls function
     }
 
     #region Functions
@@ -33,13 +33,13 @@ public class LightFlicker : MonoBehaviour
     {
         if (timer > 0)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.deltaTime; //if timer is greater than 0, timer decreases
         }
         if (timer <= 0)
         {
             lightOb.enabled = !lightOb.enabled;
             timer = Random.Range(minTime, maxTime);
-            lightFlickerSound.Play();
+            lightFlickerSound.Play(); //if timer is less than or equal to zero, the light switches state and the timer resets, plays audio
         }
     }
 

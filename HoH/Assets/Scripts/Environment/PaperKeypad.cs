@@ -10,13 +10,13 @@ public class PaperKeypad : MonoBehaviour
     [SerializeField] private KeypadController keypadController;
     [SerializeField] private GameObject keypadObject;
     [Header("Text object")]
-    [SerializeField] private TMP_Text numText;
+    [SerializeField] private TMP_Text numText; //all assigned in inspector
 
     #endregion
 
     private void Awake()
     {
-        keypadController = keypadObject.GetComponent<KeypadController>();
+        keypadController = keypadObject.GetComponent<KeypadController>(); //gets keypad script from keypad
     }
 
     private void Start()
@@ -26,7 +26,7 @@ public class PaperKeypad : MonoBehaviour
     #region Functions
     private void TextOnPaper()
     {
-        numText.text = keypadController.password;
+        numText.text = keypadController.password; //sets the text on the paper to be the password on the keypad
     }
     #endregion
 

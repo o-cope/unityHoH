@@ -9,16 +9,16 @@ public class WoodFall : MonoBehaviour
     [SerializeField] private GameObject preFall;
     [SerializeField] private GameObject postFall;
     [Header("Audio")]
-    [SerializeField] private AudioSource woodBreakAudio;
+    [SerializeField] private AudioSource woodBreakAudio; //all assigned in inspector
     #endregion
 
-    private void OnTriggerEnter(Collider player)
+    private void OnTriggerEnter(Collider player) //assigns collider variable to player
     {
-        if (player.CompareTag("Player"))
+        if (player.CompareTag("Player")) //checks if player entered the trigger
         {
-            Fall();
-            Destroy(gameObject.GetComponent<BoxCollider>());
-            StartCoroutine(DeleteBox());
+            Fall(); //runs fall function
+            Destroy(gameObject.GetComponent<BoxCollider>()); //destroys the collider preventing the player from playing the audio again and again
+            StartCoroutine(DeleteBox()); //deletes box collider that prevents player cheating
         }
     }
     #region Functions
@@ -26,9 +26,9 @@ public class WoodFall : MonoBehaviour
     private void Fall()
     {
         preFall.SetActive(false);
-        postFall.SetActive(true);
+        postFall.SetActive(true); //switches what is enabled
 
-        woodBreakAudio.Play();
+        woodBreakAudio.Play(); //plays audio
     }
 
     #endregion
@@ -38,7 +38,7 @@ public class WoodFall : MonoBehaviour
     IEnumerator DeleteBox()
     {
         yield return new WaitForSecondsRealtime(3f);
-        Destroy(postFall.GetComponent<BoxCollider>());
+        Destroy(postFall.GetComponent<BoxCollider>()); //waits 3 seconds then deletes collider
     }
 
     #endregion

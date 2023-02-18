@@ -18,7 +18,7 @@ public class DungeonDoorController : Interactable
 
     [Header("Lock settings")]
     [SerializeField] private bool locked;
-    [SerializeField] private bool unlocked;
+    [SerializeField] private bool unlocked; // THIS IS THE SAME AS DOOR CONTROLLER, WITH A DIFFERENT NAME FOR THE ANIMATIONS
 
 
     private Animator doorAnim;
