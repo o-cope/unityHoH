@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8414577771659099247}
   - component: {fileID: 7502509307494955034}
   - component: {fileID: 4156428187869737001}
+  - component: {fileID: 6708632000432043360}
   m_Layer: 0
   m_Name: CabinetShort
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6708632000432043360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509252149990273514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019936444, y: 0.008568048, z: 0.02539294}
+  m_Center: {x: -0.0000048774477, y: -0.00013633132, z: 0.009065693}

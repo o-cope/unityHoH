@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3185648684247456018}
   - component: {fileID: 7745131485361768691}
   - component: {fileID: 5573831104052399641}
+  - component: {fileID: -3786595169578668843}
   m_Layer: 0
   m_Name: Wall_Window_Colored.003
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3786595169578668843
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215675879774474505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -794882843996926399, guid: f3468aa661875bb44b54625b2bd08590, type: 3}

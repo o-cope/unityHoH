@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4320444039555158131}
   - component: {fileID: 208508967660215540}
   - component: {fileID: 193486089815405548}
+  - component: {fileID: 2824097403049078991}
   m_Layer: 0
   m_Name: Wood_Box.008
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2824097403049078991
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459006492153733557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -219718812868058460, guid: f3468aa661875bb44b54625b2bd08590, type: 3}
