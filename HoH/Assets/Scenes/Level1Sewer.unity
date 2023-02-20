@@ -10061,7 +10061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbers: 00000000000000000000000000000000
-  sprites:
+  runes:
   - {fileID: 21300000, guid: 49eaa77d8e59216479f27ff585f59d66, type: 3}
   - {fileID: 21300000, guid: 463f6cff1a86af04eafc85dcf2f5a9da, type: 3}
   - {fileID: 21300000, guid: d51428fb4686bcd4e83f84858f25e12c, type: 3}

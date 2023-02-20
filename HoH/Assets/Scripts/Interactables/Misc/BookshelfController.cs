@@ -47,7 +47,6 @@ public class BookshelfController : Interactable
         }
         else
         {
-            Debug.Log("CHECK BOOKS FALSE");
             booksText.enabled = true;
             StartCoroutine(disableBookText());
         }
