@@ -21,7 +21,6 @@ public class BookSpawningManager : MonoBehaviour
         SpawnBooks();
     }
     
-    
 
 
     #region Functions
@@ -42,7 +41,6 @@ public class BookSpawningManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             shuffledSpawnLocations[i].SetActive(true);
-            Debug.Log("shuffledSpawnLocations"[i]);
         }
     }
 
