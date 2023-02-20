@@ -15,10 +15,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @StarterAssetus : IInputActionCollection2, IDisposable
+public partial class @StarterAssets : IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @StarterAssetus()
+    public @StarterAssets()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""StarterAssets"",
@@ -377,21 +377,6 @@ public partial class @StarterAssetus : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    public override bool Equals(object obj)
-    {
-        return base.Equals(obj);
-    }
-
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-
-    public override string ToString()
-    {
-        return base.ToString();
-    }
-
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
@@ -402,8 +387,8 @@ public partial class @StarterAssetus : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Flashlight;
     public struct PlayerActions
     {
-        private @StarterAssetus m_Wrapper;
-        public PlayerActions(@StarterAssetus wrapper) { m_Wrapper = wrapper; }
+        private @StarterAssets m_Wrapper;
+        public PlayerActions(@StarterAssets wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;

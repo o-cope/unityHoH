@@ -7,7 +7,8 @@ public class CandleLight : Interactable
     #region Parametres
     [Header("Game Object")]
     [SerializeField] private GameObject candleInv;
-
+    [Header("Audio")]
+    [SerializeField] private AudioSource pickUpSFX;
     #endregion
 
     protected override void Interact()
@@ -19,6 +20,7 @@ public class CandleLight : Interactable
     private void PickUpCandle()
     {
         gameObject.SetActive(false);
+        pickUpSFX.Play();
         candleInv.SetActive(true);
     }
 

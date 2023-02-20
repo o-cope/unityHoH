@@ -12,6 +12,8 @@ public class IceController : Interactable
     [SerializeField] private GameObject iceCandle;
     [SerializeField] private GameObject book;
     [SerializeField] private GameObject iceCube;
+    [Header("Audio")]
+    [SerializeField] private AudioSource placeDownSFX;
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI getCandleText;
 
@@ -38,7 +40,12 @@ public class IceController : Interactable
         {
             iceCandle.SetActive(true);
             StartCoroutine(deleteIce());
-
+            placeDownSFX.Play();
+        }
+        else
+        {
+            getCandleText.enabled = true;
+            StartCoroutine(disableText());
         }
         
     }
@@ -53,6 +60,7 @@ public class IceController : Interactable
     {
         yield return new WaitForSecondsRealtime(3f);
         iceCube.SetActive(false);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         book.GetComponent<BoxCollider>().enabled = true;
     }
     #endregion
