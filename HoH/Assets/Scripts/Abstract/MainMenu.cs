@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     public void PlayGame(string sceneName)
     {
@@ -17,4 +21,5 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     } //Attached to the main menu, loads the first level
 
+    
 }

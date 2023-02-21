@@ -15,19 +15,23 @@ public class KeypadController : MonoBehaviour
     [SerializeField, Tooltip("Hi")] private AudioClip correctSound;
     [SerializeField] private AudioClip wrongSound; //Establishes the audio variables in the game engine inspector.
 
-    [SerializeField] private GameObject box;
+    [SerializeField] private GameObject grate;
+    [SerializeField] private GameObject endCube;
+    private Animator grateAnim;
 
     #endregion
 
     private void Awake()
     {
-        int passwordRng = Random.Range(0, 9999);
+        int passwordRng = Random.Range(1000, 10000);
         password = passwordRng.ToString(); //Randomises password
     }
 
     private void Start()
     {
         passwordText.text = ""; //Clears the text on start.
+        grateAnim = grate.GetComponent<Animator>();
+
     }
 
     #region Functions
@@ -61,7 +65,8 @@ public class KeypadController : MonoBehaviour
     {
         if (passwordText.text == password) //Checks if password is correct
         {
-            box.SetActive(false);   // Where the door actually opens !!!
+            grateAnim.Play("gratesOpen");   // Where the door actually opens !!!
+            endCube.GetComponent<BoxCollider>().enabled = true;
 
             if (audioSource != null)
             {
