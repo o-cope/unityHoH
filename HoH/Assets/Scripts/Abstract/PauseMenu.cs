@@ -6,22 +6,28 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
+
+    [SerializeField] private GameObject deathCanvas;
     
 
     public GameObject pauseMenuUI;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!deathCanvas.activeInHierarchy)
         {
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
+                if (isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                } //Checks if the game is paused and then acts accordingly. Pause button escape
             }
-            else
-            {
-                Pause();
-            } //Checks if the game is paused and then acts accordingly. Pause button escape
         }
+        
     }
 
     public void Resume()
